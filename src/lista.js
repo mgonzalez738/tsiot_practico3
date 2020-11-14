@@ -34,4 +34,13 @@ module.exports = class Lista {
         return elemento[clave];  
     }
 
+    update(clave, valor) {
+        for (var indice = 0; indice < this.#elementos.length; indice++) {
+            if (Object.keys(this.#elementos[indice])[0] === clave) {
+                this.#elementos[indice][clave]=valor;
+                return;
+            }
+        }  
+    }
+
 }

@@ -21,3 +21,9 @@ Escenario: Eliminar un elemento de una lista con elementos
     | "tres" | 3 |
     Cuando se elimina la clave "dos"
     Entonces la lista tiene 2 elementos almacenados
+
+Escenario: Actualizar el valor de un elemento de una lista con elementos
+    Dado una lista con los siguientes elementos
+    | "uno"  | 1 |
+    Cuando se actualiza la pareja { "uno": 2 }
+    Entonces se obtiene el valor "2"

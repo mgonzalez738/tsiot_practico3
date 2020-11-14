@@ -29,15 +29,21 @@ When('se busca la clave {string}', function (clave) {
     contexto.encontrado = contexto.lista.find(clave);
 });
 
+When('se actualiza la pareja {}', function (pareja) {
+    pareja = JSON.parse(pareja);
+    contexto.lista.update(Object.keys(pareja)[0], Object.values(pareja)[0]);
+    contexto.encontrado = contexto.lista.find(Object.keys(pareja)[0]);
+});
+
 Then('la lista tiene {int} elemento(s) almacenado(s)', function (cantidad) {
     expect(contexto.lista.count()).to.equal(cantidad);
 });
 
-Then('se obtiene el valor NaN', function () {
+Then('devuelve NaN', function () {
     expect(contexto.encontrado).is.NaN;
 });
 
 Then('se obtiene el valor {string}', function (valor) {
-    expect(contexto.encontrado).is.equal(valor);
+    expect(contexto.encontrado).is.equal(eval(valor));
 });
 
