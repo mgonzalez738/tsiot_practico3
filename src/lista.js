@@ -12,8 +12,16 @@ module.exports = class Lista {
         this.#elementos.push(elemento);
     }
 
+    delete(clave) {
+        for (var indice = 0; indice < this.#elementos.length; indice++) {
+            if (Object.keys(this.#elementos[indice])[0] === clave) {
+                this.#elementos.splice(indice, 1);
+                return;
+            }
+        }
+    }
+
     count() {
-        console.log(this.#elementos);
         return this.#elementos.length;
     }
 
