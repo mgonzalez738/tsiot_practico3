@@ -13,3 +13,9 @@ Escenario: Lista con un elemento
     | "clave" | "valor"|
     Cuando se busca la clave "clave"
     Entonces se obtiene el valor "valor"
+
+Escenario: Buscar una clave que no existe
+    Dado una lista con los siguientes elementos
+    | "clave" | "valor"|
+    Cuando se busca la clave "clave2"
+    Entonces se obtiene el valor NaN
