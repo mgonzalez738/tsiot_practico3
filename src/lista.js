@@ -25,4 +25,8 @@ module.exports = class Lista {
         return this.#elementos.length;
     }
 
+    find(clave) {
+        return NaN; 
+    }
+
 }
