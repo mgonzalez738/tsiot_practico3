@@ -43,4 +43,12 @@ module.exports = class Lista {
         }  
     }
 
+    getKeys() {
+        var claves = [];
+        for (let elemento of this.#elementos) {
+            claves.push(Object.keys(elemento)[0]);
+        }
+        return claves.sort();
+    }
+
 }

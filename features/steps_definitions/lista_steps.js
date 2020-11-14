@@ -35,6 +35,10 @@ When('se actualiza la pareja {}', function (pareja) {
     contexto.encontrado = contexto.lista.find(Object.keys(pareja)[0]);
 });
 
+When('se obtiene una lista de claves', function () {
+    contexto.claves = contexto.lista.getKeys();
+});
+
 Then('la lista tiene {int} elemento(s) almacenado(s)', function (cantidad) {
     expect(contexto.lista.count()).to.equal(cantidad);
 });
@@ -45,5 +49,13 @@ Then('devuelve NaN', function () {
 
 Then('se obtiene el valor {string}', function (valor) {
     expect(contexto.encontrado).is.equal(eval(valor));
+});
+
+Then('la lista tiene el orden', function (tabla) {
+    let claves = [];
+    tabla.rawTable.forEach(clave => {
+        claves.push(eval(clave[0]));
+    });
+    expect(contexto.claves).to.eql(claves);
 });
 
