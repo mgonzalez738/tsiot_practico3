@@ -26,7 +26,10 @@ module.exports = class Lista {
     }
 
     find(clave) {
-        return NaN; 
+        if(this.#elementos.length === 0)
+            return NaN;
+        let elemento = this.#elementos.find(el => Object.keys(el)[0] === clave);
+        return elemento[clave];  
     }
 
 }

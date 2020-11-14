@@ -37,3 +37,7 @@ Then('se obtiene el valor NaN', function () {
     expect(contexto.encontrado).is.NaN;
 });
 
+Then('se obtiene el valor {string}', function (valor) {
+    expect(contexto.encontrado).is.equal(valor);
+});
+
